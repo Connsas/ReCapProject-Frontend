@@ -1,12 +1,13 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Renk Adı</th>
-    </tr>
-  </thead>
-  <tr *ngFor="let color of colors">
-    <td>{{ color.colorId }}</td>
-    <td>{{ color.colorName }}</td>
-  </tr>
-</table>
+<ul class="list-group">
+  <li (click)="removeCurrentColor()" [class]="getAllColorClass()" routerLink="">
+    Tüm Renkler
+  </li>
+  <li
+    (click)="getCurrentColor(color)"
+    *ngFor="let color of colors"
+    [class]="getColorClass(color)"
+    routerLink="cars/color/{{color.colorId}}"
+  >
+    {{ color.colorName }}
+  </li>
+</ul>

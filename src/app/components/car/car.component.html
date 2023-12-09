@@ -1,4 +1,4 @@
-<table class="table">
+<!-- <table class="table">
     <thead>
         <tr>
           <th>Marka Adı</th>
@@ -17,4 +17,20 @@
         <td>{{ carDetail.description }}</td>
         <td>{{ carDetail.modelYear }}</td>
       </tr>
-</table>
+</table> -->
+
+<ul class="list-group">
+  <li
+    (click)="getCurrentCar(carDetail)"
+    *ngFor="let carDetail of carDetails"
+    [class]="getCarClass(carDetail)"
+  >
+    <h4>{{ carDetail.carName }}</h4>
+    <p><b>Marka İsmi: </b>{{ carDetail.brandName }}</p>
+    <p><b>Renk:</b> {{carDetail.colorName}}</p>
+    <p>
+      <b>Günlük Ücret: </b> {{carDetail.dailyPrice}} TL
+    </p>
+  </li>
+</ul>
+

@@ -14,7 +14,7 @@ import { response } from 'express';
 export class RentalComponent implements OnInit {
   constructor(private rentalService: RentalService) {}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.getAllRentalDetails();
   }
 
   rentalDetails: rentalDetails[] = [];
